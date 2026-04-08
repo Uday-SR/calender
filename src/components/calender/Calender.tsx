@@ -51,18 +51,45 @@ export default function Calendar() {
                 <motion.div
                     key={calendar.currentDate.toISOString()}
                     className="relative z-10"
+                    style={{
+                        transformOrigin: direction === 1 ? "left center" : "right center",
+                    }}
+
+                    // SWIPE 
+                    drag="x"
+                    dragConstraints={{ left: 0, right: 0 }}
+                    dragElastic={0.5}
+
+                    onDragEnd={(e, info) => {
+                        const swipe = info.offset.x;
+
+                        if (swipe < -50) {
+                        changeMonth(1);   
+                        } else if (swipe > 50) {
+                        changeMonth(-1);  
+                        }
+                    }}
 
                     animate={
-                    isAnimating
+                        isAnimating
                         ? {
                             rotateY: direction === 1 ? -90 : 90,
-                            x: direction === 1 ? -100 : 100,
-                            opacity: 0,
-                        }
-                        : {}
+                            x: direction === 1 ? -80 : 80,
+                            scale: 0.92,
+                            opacity: 0.6,
+                            }
+                        : {
+                            rotateY: 0,
+                            x: 0,
+                            scale: 1,
+                            opacity: 1,
+                            }
                     }
 
-                    transition={{ duration: 0.9, ease: "easeInOut" }}
+                    transition={{
+                        duration: 0.9,
+                        ease: [0.4, 0, 0.2, 1],
+                    }}
                 >
                     <PageContent
                         date={calendar.currentDate}
