@@ -21,11 +21,12 @@ export default function CalendarGrid({
   selectDate,
 }: any) {
   const days = generateCalendarDays(currentDate);
+  
 
   return (
     <div>
       {/* Days */}
-      <div className="grid grid-cols-7 text-xs text-gray-500 mb-2 min-h-[0px]">
+      <div className="grid grid-cols-7 text-xs text-gray-500 mb-2">
         {DAYS.map((d) => (
           <div key={d} className="text-center">
             {d}

@@ -13,6 +13,8 @@ export default function Calendar() {
     const [direction, setDirection] = useState(1);
     const [isAnimating, setIsAnimating] = useState(false);
 
+    
+
     const nextDate =
         direction === 1
         ? addMonths(calendar.currentDate, 1)
@@ -32,7 +34,7 @@ export default function Calendar() {
 
     return (
         <div className="
-        w-[400px] md:w-[450px]
+        w-[370px] md:w-[400px]
         h-auto
         bg-white overflow-hidden
         border border-gray-200

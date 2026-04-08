@@ -4,6 +4,7 @@ import NotesPanel from "@/components/notes/NotesPanel";
 import Hero from "./Hero";
 
 export default function PageContent({ date, calendar, onChange, isActive }: any) {
+  
   return (
     <div className="
       bg-gray-50 overflow-hidden
