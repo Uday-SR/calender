@@ -38,13 +38,9 @@ export default function NotesPanel({ startDate, endDate }: any) {
         placeholder="Write notes..."
         disabled={!key}
         className="
-          w-full h-full
-          resize-none outline-none
-          bg-transparent
-          text-sm
-          leading-[28px]
-          px-2
-          caret-black
+          w-full h-full resize-none outline-none
+          bg-transparent text-sm leading-[28px]
+          px-2 caret-black
         "
         style={{
           backgroundImage:

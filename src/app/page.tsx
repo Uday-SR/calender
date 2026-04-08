@@ -4,11 +4,11 @@ import { motion } from "framer-motion";
 
 export default function Home() {
   return (
-    <main className="min-h-screen flex items-center justify-center py-6">
+    <main className="h-[100vh] flex items-center justify-center py-6">
 
-      <div className="relative">
+      <div className="scale-[0.75]">
 
-        {/* HANGING CALENDAR (SUBTLE SWING) */}
+        {/* CALENDAR */}
         <motion.div
           initial={{ rotate: -0.5 }}
           animate={{ rotate: 0.5 }}

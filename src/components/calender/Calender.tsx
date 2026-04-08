@@ -13,8 +13,6 @@ export default function Calendar() {
     const [direction, setDirection] = useState(1);
     const [isAnimating, setIsAnimating] = useState(false);
 
-    
-
     const nextDate =
         direction === 1
         ? addMonths(calendar.currentDate, 1)
@@ -34,51 +32,47 @@ export default function Calendar() {
 
     return (
         <div className="
-        w-[370px] md:w-[400px]
-        h-auto
-        bg-white overflow-hidden
-        border border-gray-200
-        shadow-black shadow-xl
-        flex flex-col
-    ">
+        w-[370px] md:w-[400px] h-auto bg-white overflow-hidden
+        border border-gray-200 shadow-black shadow-xl flex flex-col
+        ">
 
-        <div className="relative w-full max-w-4xl mx-auto" style={{ perspective: 1500 }}>
+            <div className="relative w-full max-w-4xl mx-auto" style={{ perspective: 1500 }}>
 
-        {/* BOTTOM PAGE (NEXT MONTH) */}
-        <div className="absolute inset-0 z-0">
-            <PageContent
-                date={nextDate}
-                calendar={calendar}
-                isActive={false}
-            />
-        </div>
+                {/* BOTTOM PAGE (NEXT MONTH) */}
+                <div className="absolute inset-0 z-0">
+                    <PageContent
+                        date={nextDate}
+                        calendar={calendar}
+                        isActive={false}
+                    />
+                </div>
 
-        {/* TOP PAGE (CURRENT MONTH) */}
-        <motion.div
-            key={calendar.currentDate.toISOString()}
-            className="relative z-10"
+                {/* TOP PAGE (CURRENT MONTH) */}
+                <motion.div
+                    key={calendar.currentDate.toISOString()}
+                    className="relative z-10"
 
-            animate={
-            isAnimating
-                ? {
-                    rotateY: direction === 1 ? -90 : 90,
-                    x: direction === 1 ? -100 : 100,
-                    opacity: 0,
-                }
-                : {}
-            }
+                    animate={
+                    isAnimating
+                        ? {
+                            rotateY: direction === 1 ? -90 : 90,
+                            x: direction === 1 ? -100 : 100,
+                            opacity: 0,
+                        }
+                        : {}
+                    }
 
-            transition={{ duration: 0.5, ease: "easeInOut" }}
-        >
-            <PageContent
-                date={calendar.currentDate}
-                calendar={calendar}
-                onChange={changeMonth}
-                isActive={true}
-            />
-        </motion.div>
+                    transition={{ duration: 0.9, ease: "easeInOut" }}
+                >
+                    <PageContent
+                        date={calendar.currentDate}
+                        calendar={calendar}
+                        onChange={changeMonth}
+                        isActive={true}
+                    />
+                </motion.div>
 
-        </div>
+            </div>
         </div>
     );
 }

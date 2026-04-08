@@ -8,17 +8,12 @@ export default function RightArrow() {
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
       className="
-        p-2 rounded-full bg-white shadow-md
+        p-1 rounded-full bg-white shadow-md
         hover:bg-gray-100 transition
       "
     >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 640 640"
-        className="w-6 h-6 fill-gray-800"
-      >
-        <path d="M64 320C64 461.4 178.6 576 320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320zM451.3 331.3L347.3 435.3C342.7 439.9 335.8 441.2 329.9 438.8C324 436.4 320 430.5 320 424L320 368L224 368C206.3 368 192 353.7 192 336L192 304C192 286.3 206.3 272 224 272L320 272L320 216C320 209.5 323.9 203.7 329.9 201.2C335.9 198.7 342.8 200.1 347.3 204.7L451.3 308.7C457.5 314.9 457.5 325.1 451.3 331.3z" />
-      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" className="w-6 h-6 fill-gray-800">
+      <path d="M441.3 299.8C451.5 312.4 450.8 330.9 439.1 342.6L311.1 470.6C301.9 479.8 288.2 482.5 276.2 477.5C264.2 472.5 256.5 460.9 256.5 448L256.5 192C256.5 179.1 264.3 167.4 276.3 162.4C288.3 157.4 302 160.2 311.2 169.3L439.2 297.3L441.4 299.7z"/></svg>
     </motion.button>
   );
 }
