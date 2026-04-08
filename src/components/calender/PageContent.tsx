@@ -18,33 +18,29 @@ export default function PageContent({ date, calendar, onChange, isActive }: any)
       <div className="grid md:grid-cols-2 gap-6 p-6 relative z-20">
         
         {/* NOTES */}
-        {isActive && (
-          <motion.div
-            initial={{ x: -40, opacity: 0 }} 
-            animate={{
-              x: 0,
-              opacity: 1,
-            }}
-            transition={{
-              duration: 0.4,
-              ease: "easeOut",
-              delay: 0.2,
-            }}
-          >
-            <NotesPanel date={date} />
-          </motion.div>
-        )}
+        <motion.div
+          initial={false}
+          animate={{
+            opacity: isActive ? 1 : 0,
+            x: isActive ? 0 : -20,
+            pointerEvents: isActive ? "auto" : "none",
+          }}
+          
+          className="w-full"
+        >
+          <NotesPanel date={date} />
+        </motion.div>
 
         {/* CALENDAR */}
         <div>
           <motion.div
-            initial={{ x: -40, opacity: 0 }} 
+            initial={false} 
             animate={{
               x: 0,
               opacity: isActive ? 1 : 0.7, 
             }}
             transition={{
-              duration: 0.8,
+              duration: 0.1,
               ease: "easeOut",
             }}
           >
