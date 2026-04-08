@@ -32,7 +32,7 @@ export default function Calendar() {
 
     return (
         <div className="
-        w-[420px] md:w-[450px]
+        w-[400px] md:w-[450px]
         h-auto
         bg-white overflow-hidden
         border border-gray-200

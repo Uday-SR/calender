@@ -44,7 +44,7 @@ export default function NotesPanel({ startDate, endDate }: any) {
           text-sm
           leading-[28px]
           px-2
-          disabled:opacity-50
+          caret-black
         "
         style={{
           backgroundImage:

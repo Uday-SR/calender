@@ -69,7 +69,7 @@ export default function CalendarGrid({
                 {(start || end) && (
                 <motion.div
                     layoutId="range-circle"
-                    className="absolute w-7 h-7 bg-blue-600 rounded-full"
+                    className="absolute w-7 h-7 bg-amber-300 rounded-full"
                 />
                 )}
 

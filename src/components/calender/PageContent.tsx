@@ -12,7 +12,7 @@ export default function PageContent({ date, calendar, onChange, isActive }: any)
     ">
       <Hero currentDate={date} />
 
-      <div className="grid md:grid-cols-2 gap-6 p-6 relative">
+      <div className="grid md:grid-cols-2 gap-6 p-6 relative z-20">
         {isActive && <NotesPanel
           startDate={calendar.startDate}
           endDate={calendar.endDate}
