@@ -4,9 +4,7 @@ import { motion } from "framer-motion";
 
 export default function RightArrow() {
   return (
-    <motion.button
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.9 }}
+    <button
       className="
         p-1 rounded-full bg-white shadow-md
         hover:bg-gray-100 transition
@@ -14,6 +12,6 @@ export default function RightArrow() {
     >
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" className="w-6 h-6 fill-gray-800">
       <path d="M441.3 299.8C451.5 312.4 450.8 330.9 439.1 342.6L311.1 470.6C301.9 479.8 288.2 482.5 276.2 477.5C264.2 472.5 256.5 460.9 256.5 448L256.5 192C256.5 179.1 264.3 167.4 276.3 162.4C288.3 157.4 302 160.2 311.2 169.3L439.2 297.3L441.4 299.7z"/></svg>
-    </motion.button>
+    </button>
   );
 }

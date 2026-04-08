@@ -23,12 +23,17 @@ export default function PageContent({ date, calendar, onChange, isActive }: any)
           animate={{
             opacity: isActive ? 1 : 0,
             x: isActive ? 0 : -20,
-            pointerEvents: isActive ? "auto" : "none",
           }}
-          
+          transition={{
+            duration: 0.4,
+            ease: "easeOut",
+          }}
           className="w-full"
         >
-          <NotesPanel date={date} />
+
+          <NotesPanel 
+            startDate={calendar.startDate}
+            endDate={calendar.endDate}/>
         </motion.div>
 
         {/* CALENDAR */}
@@ -51,6 +56,7 @@ export default function PageContent({ date, calendar, onChange, isActive }: any)
             />
 
             <CalendarGrid
+              key={`${calendar.startDate}-${calendar.endDate}-${date}`}
               {...calendar}
               currentDate={date}
             />

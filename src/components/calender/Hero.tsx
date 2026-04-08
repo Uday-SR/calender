@@ -1,6 +1,12 @@
 import { format } from "date-fns";
 
 export default function Hero({ currentDate }: { currentDate: Date }) {
+
+  const safeDate =
+    currentDate instanceof Date && !isNaN(currentDate.getTime())
+      ? currentDate
+      : new Date();
+
   return (
     <div className="relative h-72 w-full overflow-hidden">
 
