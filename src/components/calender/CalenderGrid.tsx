@@ -54,7 +54,7 @@ export default function CalendarGrid({
           let hasSingleNote = false;
           let isInSavedRange = false;
 
-          Object.entries(allNotes).forEach(([k, value]) => {
+          Object.entries(allNotes as Record<string, string>).forEach(([k, value]) => {
             if (!value || value.trim() === "") return;
 
             if (k === key) {
