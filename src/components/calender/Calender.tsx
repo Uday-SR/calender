@@ -5,10 +5,6 @@ import { addMonths, subMonths } from "date-fns";
 import { motion } from "framer-motion";
 
 import { useCalendar } from "@/hooks/useCalender";
-import Header from "./Header";
-import CalendarGrid from "./CalenderGrid";
-import NotesPanel from "@/components/notes/NotesPanel";
-import Hero from "./Hero";
 import PageContent from "./PageContent";
 
 export default function Calendar() {
@@ -37,7 +33,7 @@ export default function Calendar() {
     return (
         <div className="
         w-[420px] md:w-[450px]
-        h-[610px]
+        h-auto
         bg-white overflow-hidden
         border border-gray-200
         shadow-black shadow-xl

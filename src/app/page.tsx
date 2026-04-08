@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gray-200  flex items-center justify-center">
+    <main className="min-h-screen bg-gray-300  flex items-center justify-center">
 
       <div className="relative">
 

@@ -15,7 +15,7 @@ export default function Hero({ currentDate }: { currentDate: Date }) {
       <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-transparent" />
 
       {/* BLUE SHAPE */}
-      <div className="absolute bottom-0 left-0 w-full h-32 bg-blue-500 clip-path-custom" />
+      <div className="absolute bottom-0 left-0 w-full h-32 bg-blue-400 clip-path-custom" />
 
       {/* TEXT */}
       <div className="absolute bottom-6 right-6 text-white text-right z-10">

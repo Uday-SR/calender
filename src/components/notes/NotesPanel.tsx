@@ -1,30 +1,57 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+import { getNoteKey } from "@/utils/notes";
 
-export default function NotesPanel() {
+export default function NotesPanel({ startDate, endDate }: any) {
   const [note, setNote] = useState("");
 
-  useEffect(() => {
-    const saved = localStorage.getItem("calendar-note");
-    if (saved) setNote(saved);
-  }, []);
+  const key = getNoteKey(startDate, endDate);
 
   useEffect(() => {
-    localStorage.setItem("calendar-note", note);
-  }, [note]);
+    if (!key) return;
+
+    const allNotes = JSON.parse(localStorage.getItem("calendar-notes") || "{}");
+
+    setNote(allNotes[key] || "");
+  }, [key]);
+
+  useEffect(() => {
+    if (!key) return;
+
+    const allNotes = JSON.parse(localStorage.getItem("calendar-notes") || "{}");
+
+    allNotes[key] = note;
+
+    localStorage.setItem("calendar-notes", JSON.stringify(allNotes));
+  }, [note, key]);
 
   return (
-    <textarea
-      className="w-full h-40 p-2 bg-transparent resize-none outline-none"
-      style={{
-        backgroundImage:
-          "linear-gradient(to bottom, #d1d5db 1px, transparent 1px)",
-        backgroundSize: "100% 28px",
-      }}
-      placeholder="Write notes..."
-      value={note}
-      onChange={(e) => setNote(e.target.value)}
-    />
+    <div className="h-full flex flex-col">
+      <h1 className="text-sm font-semibold mb-2">
+        {key ? "Notes" : "Select a date"}
+      </h1>
+
+      <textarea
+        value={note}
+        onChange={(e) => setNote(e.target.value)}
+        placeholder="Write notes..."
+        disabled={!key}
+        className="
+          w-full h-full
+          resize-none outline-none
+          bg-transparent
+          text-sm
+          leading-[28px]
+          px-2
+          disabled:opacity-50
+        "
+        style={{
+          backgroundImage:
+            "linear-gradient(to bottom, #d1d5db 1px, transparent 1px)",
+          backgroundSize: "100% 28px",
+        }}
+      />
+    </div>
   );
 }
